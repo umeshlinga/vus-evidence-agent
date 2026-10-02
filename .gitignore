@@ -12,3 +12,5 @@ __pycache__/
 data/processed/train_frozen.csv
 data/processed_v2/train_frozen.csv
 data/processed_v2/train_features.csv
+data/af_cache/
+data/.af_cache_tmp/

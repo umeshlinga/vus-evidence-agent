@@ -83,6 +83,11 @@ NF1 (0.231) and USH2A (0.278). Full detail in `data/processed_v2/`:
 `SPLIT_REPORT.md`, `FEATURE_REPORT.md`, `MODEL_REPORT.md`,
 `MODEL_REPORT_2.md`, and `examples/agent_reports_real.md`.
 
+## See it working first
+
+Real run output (demo + agent on real variants + a refusal) is in
+[`examples/DEMO.md`](examples/DEMO.md) — no screenshots, just output.
+
 ## Run the demo (no downloads, CPU, 10 seconds)
 
 ```bash
