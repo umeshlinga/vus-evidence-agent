@@ -27,3 +27,20 @@ METHOD NOTE (a trap we fell into and document): building the gene prior
 from ALL frozen-train rows instead of only AM-scored rows silently drops
 AUROC to 0.933-0.935 (Brier 0.101) - the prior must describe the scored
 population the model actually serves, not the whole database.
+
+## Isotonic-calibrated ECE by gene — M2+R (test, n>=50)
+  - BRCA2: n=158, ECE=0.041
+  - BRCA1: n=138, ECE=0.082
+  - ADGRV1: n=130, ECE=0.016
+  - DNAH11: n=118, ECE=0.054
+  - DMD: n=97, ECE=0.069
+  - KMT2D: n=94, ECE=0.069
+  - RAI1: n=94, ECE=0.028
+  - ABCA4: n=86, ECE=0.023
+  - MUTYH: n=86, ECE=0.083
+  - SCN1A: n=83, ECE=0.046
+  - NF1: n=81, ECE=0.117
+  - LDLR: n=74, ECE=0.059
+  - USH2A: n=74, ECE=0.290
+  - GCK: n=71, ECE=0.030
+  - FBN1: n=68, ECE=0.042
