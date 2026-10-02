@@ -1,0 +1,6 @@
+numpy>=1.26
+pandas>=2.1
+# Week 2 (full model path — demo does not need these):
+# scikit-learn>=1.4
+# lightgbm>=4.0
+# shap>=0.44
