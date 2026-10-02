@@ -73,6 +73,7 @@ critical path.
 | AlphaMissense + Platt (fit on 2024) | 0.921 | 0.157 | 0.141 |
 | Ensemble (AM + gene prior) raw | 0.959 | 0.251 | 0.176 |
 | Ensemble + isotonic (fit on train holdout) | 0.958 | 0.017 | 0.078 |
+| Ensemble + REVEL + isotonic (Model Report 4) | 0.968 | 0.023 | 0.066 |
 
 Temporal split: train frozen at 2024-01 (1,103,657 variants); test = 27,748
 variants ClinVar reclassified after the freeze (AlphaMissense covers 37.4%).

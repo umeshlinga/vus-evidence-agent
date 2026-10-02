@@ -8,20 +8,20 @@ Trained on ≤2024-01 ClinVar; tested ONLY on post-2024 reclassifications
 
 | variant | AUROC | ECE | Brier |
 |---------|-------|-----|-------|
-| WithoutMLP raw | 0.947 | 0.192 | 0.097 |
-| + isotonic (train holdout) | 0.947 | 0.175 | 0.090 |
-| + Platt (train holdout) | 0.947 | 0.182 | 0.102 |
+| WithoutMLP raw | 0.947 | 0.048 | 0.097 |
+| + isotonic (train holdout) | 0.947 | 0.013 | 0.090 |
+| + Platt (train holdout) | 0.947 | 0.059 | 0.102 |
 
 Permutation importance (test AUROC drop): am_score 0.360, gated prior 0.043.
 
-HONEST READING: the hand-built MLP does NOT beat the simple linear ensemble
-(Model Report 2: AUROC 0.959, isotonic ECE 0.017). Its raw probabilities are
-sharper (Brier 0.097 vs 0.176) but its calibration transfers worse - the
-isotonic map fitted on its saturated holdout scores barely helps on future
-data. More model is not more truth; the linear model + isotonic stays our
-headline. Interpretability is via permutation importance (model-agnostic),
-not SHAP values, and is labelled as such everywhere.
+HONEST READING: the hand-built MLP does not beat the linear ensemble
+(Model Report 2: AUROC 0.958, isotonic ECE 0.017, Brier 0.078). It calibrates
+about as well after isotonic (ECE 0.013) but ranks worse (AUROC 0.947) and
+scores worse overall (Brier 0.090). More model is not more truth; the linear
+model stays our headline. Interpretability is permutation importance
+(model-agnostic), labelled as such, not SHAP.
 
-gnomAD AF: not a feature - the allele-number download is locus-level AN
-with no AC/alt, so it cannot yield a variant allele frequency
-(docs/gnomad-note.md). AF joins later via per-chromosome sites VCF or API.
+CORRECTION NOTE: the first committed version of this report printed ECE
+values computed with an argument-order bug in the ECE call (labels passed
+where probabilities belong). A reproduction audit of Model Report 2 caught
+it; the table above is recomputed correctly. AUROC and Brier were unaffected.

@@ -64,7 +64,7 @@ def platt_predict(model, x):
     return 1 / (1 + np.exp(-(a * (x - xm) / xs_ + b)))
 iso = isotonic_fit(raw_cal, ytr[ica]); pla = fit_platt(raw_cal, ytr[ica])
 for name, p in [("raw", raw_te), ("+isotonic(train-holdout)", isotonic_apply(iso, raw_te)), ("+Platt(train-holdout)", platt_predict(pla, raw_te))]:
-    print(f"  WithoutMLP {name:26s} AUROC {auroc(yte, p):.3f}  ECE {ece(yte, p):.3f}  Brier {brier(yte, p):.3f}")
+    print(f"  WithoutMLP {name:26s} AUROC {auroc(yte, p):.3f}  ECE {ece(p, yte):.3f}  Brier {brier(p, yte):.3f}")
 
 # permutation importance on test (SHAP-equivalent honesty check, model-agnostic)
 base = auroc(yte, raw_te)
